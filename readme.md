@@ -1,4 +1,4 @@
 ## What is this?
 
-LearNode Wes Bos Course.
+LearNode Wes Bos Course
  
