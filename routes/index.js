@@ -44,9 +44,10 @@ router.get("/account/reset/:token", catchErrors(authController.reset));
 router.post("/account/reset/:token", authController.confirmedPasswords, catchErrors(authController.updatePassword));
 
 router.get("/map", storeController.mapPage);
+router.get("/hearts", catchErrors(storeController.getHearts));
 
 /*----API-----*/
 router.get("/api/search", catchErrors(storeController.searchStores));
 router.get("/api/stores/near", catchErrors(storeController.mapStores));
-router.post("/api/stores/:id/heart", catchErrors(storeController.heartStore));
+router.post("/api/stores/:id/heart", authController.isLoggedIn, catchErrors(storeController.heartStore));
 module.exports = router;
