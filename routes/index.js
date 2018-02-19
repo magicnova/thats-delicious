@@ -46,6 +46,8 @@ router.post("/account/reset/:token", authController.confirmedPasswords, catchErr
 
 router.get("/map", storeController.mapPage);
 router.get("/hearts", catchErrors(storeController.getHearts));
+router.get("/top", catchErrors(storeController.getTopStores));
+
 router.post("/reviews/:id", authController.isLoggedIn, catchErrors(reviewController.addReview));
 
 /*----API-----*/
