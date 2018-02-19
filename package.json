@@ -5,12 +5,15 @@
   "engines": {
     "node": ">= 7.6.0"
   },
+  "now":{
+    "dotenv":"variables.env.now"
+  },
   "scripts": {
     "start": "node ./start.js",
     "prod": "node ./start.js",
     "build": "webpack --display-max-modules 0",
     "watch": "nodemon ./start.js --ignore public/",
-    "start_local": "concurrently \"npm run watch\" \"npm run assets\" --names \"💻,📦\" --prefix name",
+    "dev": "concurrently \"npm run watch\" \"npm run assets\" --names \"💻,📦\" --prefix name",
     "npm": "webpack -w --display-max-modules 0",
     "sample": "node ./data/load-sample-data.js",
     "blowitallaway": "node ./data/load-sample-data.js --delete",
